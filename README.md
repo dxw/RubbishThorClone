@@ -8,7 +8,7 @@ To install:
 
 ```bash
 $ cd somewhere_sensible
-$ git clone git@github.com:dxw/LameThorClone.git
+$ git clone https://github.com/dxw/LameThorClone.git
 $ git submodule update --init
 ```
 
