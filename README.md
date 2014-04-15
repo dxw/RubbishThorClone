@@ -24,7 +24,7 @@ class HelloWorld extends RubbishThorClone {
 };
 ```
 
-For each command you want to define, you need to add a definition and a callback. Definitions go in a method called commands. Callbacks should be public methods on your class:
+For each subcommand you want to define, you need to add a definition and a callback. Definitions go in a method called commands. Callbacks should be public methods on your class, with the same name as the subcommand:
 
 ```php
 class HelloWorld extends RubbishThorClone {
@@ -38,7 +38,7 @@ class HelloWorld extends RubbishThorClone {
 };
 ```
 
-You can also add options to commands. To define options, pass a callback in when you define your command:
+You can also add options to subcommands. To define options, pass a callback in when you define your subcommand:
 
 ```php
 public function commands() {
