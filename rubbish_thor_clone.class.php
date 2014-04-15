@@ -9,6 +9,8 @@ abstract class RubbishThorClone {
   private $command_defs;
   private $option_parser;
 
+  protected $argv;
+
   public $options;
 
   function __construct() {
@@ -21,11 +23,19 @@ abstract class RubbishThorClone {
   public abstract function commands();
 
   public function start($argv) {
+    $this->argv = $argv;
     $this->executable = $argv[0];
 
     if(count($argv) > 1) {
-      $this->command      = $argv[1];
-      $this->command_def  = $this->command_defs[$this->command];
+      $this->command = $argv[1];
+
+      if(isset($this->command_defs[$this->command])) {
+        $this->command_def = $this->command_defs[$this->command];
+      }
+      else {
+        $this->usage();
+        exit(1);
+      }
     }
     else {
       $this->usage();
@@ -43,10 +53,11 @@ abstract class RubbishThorClone {
     }
 
     if($this->command_def->options_callback) {
-      $arguments = $this->parse_options($this->command_def->options_callback);
+      $arguments = $this->parse_options($this->command_def->options_callback, $this->argv);
+      $arguments = array_slice($this->argv, 1);
     }
     else {
-      $arguments = array_slice($argv, 2);
+      $arguments = array_slice($this->argv, 2);
     }
 
     # Get the arguments and check there are enough
@@ -74,11 +85,11 @@ abstract class RubbishThorClone {
     }
   }
 
-  private function parse_options($options_callack) {
+  private function parse_options($options_callack, &$arguments = null) {
     call_user_func($options_callack, $this->option_parser);
 
     try {
-      $args = $this->option_parser->parse();
+      $args = $this->option_parser->parse($arguments);
     }
     catch(Exception $e) {
       $this->die_with_usage_error("bad options. Run `{$this->executable} help {$this->command}' for more information");
