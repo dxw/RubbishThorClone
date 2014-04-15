@@ -100,7 +100,7 @@ abstract class LameThorClone {
 
   # TODO: nice column alignment
   public function usage() {
-    echo "Tasks:\n\n";
+    echo "Subcommands:\n\n";
 
     foreach($this->command_defs as $command => $def) {
       echo "  {$this->executable} {$this->command} ";
@@ -113,7 +113,7 @@ abstract class LameThorClone {
     }
   }
 
-  protected function command($definition, $description, $options_callback = false, $help_callback = false) {
+  protected function command($definition, $description, $options_callback = false) {
     $command_bits = explode(' ', $definition);
 
     $name = $command_bits[0];
