@@ -1,6 +1,6 @@
 ## Rubbish Thor Clone
 
-Rubbish Thor Clone is a Rubbish Clone of [Thor](http://whatisthor.com/), a popular toolkit for CLI applications written in Ruby.
+Rubbish Thor Clone is a rubbish clone of [Thor](http://whatisthor.com/), a popular toolkit for CLI applications written in Ruby.
 
 Rubbish Thor Clone exposes an executable with a number of subcommands, like git or bundler.
 
