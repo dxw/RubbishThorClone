@@ -1,3 +1,6 @@
 [submodule "lib/optionparser"]
 	path = lib/optionparser
 	url = https://github.com/mjijackson/optionparser.git
+[submodule "lib/Console_Table"]
+	path = lib/Console_Table
+	url = git@github.com:pear/Console_Table.git
