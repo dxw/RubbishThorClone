@@ -75,7 +75,7 @@ abstract class LameThorClone {
   }
 
   private function parse_options($options_callack) {
-    call_user_func($options_callback, $this->option_parser);
+    call_user_func($options_callack, $this->option_parser);
 
     try {
       $args = $this->option_parser->parse();
@@ -103,7 +103,7 @@ abstract class LameThorClone {
     echo "Subcommands:\n\n";
 
     foreach($this->command_defs as $command => $def) {
-      echo "  {$this->executable} {$this->command} ";
+      echo "  {$this->executable} {$command} ";
 
       foreach($def->arguments as $argument) {
         echo "{$argument} ";
