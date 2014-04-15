@@ -1,6 +1,6 @@
 <?php
 
-require dirname(__FILE__) . "/optionparser/lib/OptionParser.php";
+require dirname(__FILE__) . "/lib/optionparser/lib/OptionParser.php";
 
 abstract class LameThorClone {
   private $executable;
