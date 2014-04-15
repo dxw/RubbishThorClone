@@ -1,3 +1,5 @@
+## Lame Thor Clone
+
 Lame Thor Clone is a Lame Clone of Thor, a popular toolkit for CLI applications written in Ruby.
 
 Lame Thor Clone exposes an executable with a number of subcommands, like git or bundler.
@@ -57,7 +59,7 @@ After you've done all that, you just need to instantiate your class and call sta
 ```php
 $hello = new HelloWorld();
 $hello->start($argv);
-```.
+```
 
 For the full code, check hello_world.class.php in the examples directory.
 
