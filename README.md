@@ -1,25 +1,25 @@
-## Lame Thor Clone
+## Rubbish Thor Clone
 
-Lame Thor Clone is a Lame Clone of [Thor](http://whatisthor.com/), a popular toolkit for CLI applications written in Ruby.
+Rubbish Thor Clone is a Rubbish Clone of [Thor](http://whatisthor.com/), a popular toolkit for CLI applications written in Ruby.
 
-Lame Thor Clone exposes an executable with a number of subcommands, like git or bundler.
+Rubbish Thor Clone exposes an executable with a number of subcommands, like git or bundler.
 
 To install:
 
 ```bash
 $ cd somewhere_sensible
-$ git clone https://github.com/dxw/LameThorClone.git
+$ git clone https://github.com/dxw/RubbishThorClone.git
 $ git submodule update --init
 ```
 
-To use, first create a class that inherits from LameThorClone:
+To use, first create a class that inherits from RubbishThorClone:
 
 ```php
 <?php
 
-require "lame_thor_clone.class.php";
+require "rubbish_thor_clone.class.php";
 
-class HelloWorld extends LameThorClone {
+class HelloWorld extends RubbishThorClone {
 
 };
 ```
@@ -27,7 +27,7 @@ class HelloWorld extends LameThorClone {
 For each command you want to define, you need to add a definition and a callback. Definitions go in a method called commands. Callbacks should be public methods on your class:
 
 ```php
-class HelloWorld extends LameThorClone {
+class HelloWorld extends RubbishThorClone {
   public function commands() {
     $this->command('hello NAME', 'say hello to NAME');
   }
@@ -60,7 +60,7 @@ public function hello($name) {
 }
 ```
 
-Lame Thor Clone uses the OptionParser library to parse command lines, so [check out its API](https://github.com/mjijackson/optionparser) for more.
+Rubbish Thor Clone uses the OptionParser library to parse command lines, so [check out its API](https://github.com/mjijackson/optionparser) for more.
 
 After you've done all that, you just need to instantiate your class and call start:
 
@@ -71,13 +71,13 @@ $hello->start($argv);
 
 For the full code, check hello_world.class.php in the examples directory.
 
-## Lame Thor Clone's API
+## Rubbish Thor Clone's API
 
-### LameThorClone::commands
+### RubbishThorClone::commands
 
-An abstract function your class should implement. It's expected to call LameThorClone::command to define all your subcommands.
+An abstract function your class should implement. It's expected to call RubbishThorClone::command to define all your subcommands.
 
-### LameThorClone::command
+### RubbishThorClone::command
 
 Call this to define your subcommands. It takes three arguments: $definition, $description and (optionally) $options_callback.
 
@@ -97,13 +97,13 @@ A human-friendly short description of the subcommand, used to generate usage hel
 
 ### $options_callback
 
-A callable that defines the options your subcommand accepts, using [OptionParser's API](https://github.com/mjijackson/optionparser). LameThorClone has a built in "help" command, whose output is also generated from the information you provide here (using OptionParser::addHead and soforth).
+A callable that defines the options your subcommand accepts, using [OptionParser's API](https://github.com/mjijackson/optionparser). RubbishThorClone has a built in "help" command, whose output is also generated from the information you provide here (using OptionParser::addHead and soforth).
 
-## LameThorClone::usage
+## RubbishThorClone::usage
 
 Emits a list of the subcommands you have defined, along with their short descriptions.
 
-## LameThorClone::start
+## RubbishThorClone::start
 
 Takes one argument ($argv), figures out what to do with it , and calls your callbacks as necessary.
 

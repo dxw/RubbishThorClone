@@ -1,8 +1,8 @@
 <?php
 
-require "lame_thor_clone.class.php";
+require "rubbish_thor_clone.class.php";
 
-class HelloWorld extends LameThorClone {
+class HelloWorld extends RubbishThorClone {
 
   public function commands() {
     $this->command('hello NAME', 'say hello to NAME', function($option_parser) {

@@ -2,7 +2,7 @@
 
 require dirname(__FILE__) . "/lib/optionparser/lib/OptionParser.php";
 
-abstract class LameThorClone {
+abstract class RubbishThorClone {
   private $executable;
   private $command;
 
