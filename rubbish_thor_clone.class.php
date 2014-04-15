@@ -1,6 +1,8 @@
 <?php
 
 require dirname(__FILE__) . "/lib/optionparser/lib/OptionParser.php";
+require dirname(__FILE__) . "/lib/Console_Table/Table.php";
+
 
 abstract class RubbishThorClone {
   private $executable;
@@ -71,7 +73,7 @@ abstract class RubbishThorClone {
   protected function help($command) {
     $help_command = $this->command_defs[$command];
 
-    echo "{$this->executable} {$this->command} ";
+    echo basename($this->executable) . " {$this->command} ";
 
     foreach($help_command->arguments as $argument) {
       echo "{$argument} ";
@@ -113,15 +115,20 @@ abstract class RubbishThorClone {
   public function usage() {
     echo "Subcommands:\n\n";
 
+    $table = new Console_Table(CONSOLE_TABLE_ALIGN_LEFT, '');
+
     foreach($this->command_defs as $command => $def) {
-      echo "  {$this->executable} {$command} ";
+      $row = array(
+        basename($this->executable),
+        $command,
+        implode(' ', $def->arguments),
+        '    ' . $def->description,
+      );
 
-      foreach($def->arguments as $argument) {
-        echo "{$argument} ";
-      }
-
-      echo "    # {$def->description}\n";
+      $table->addRow($row);
     }
+
+    echo $table->getTable();
   }
 
   protected function command($definition, $description, $options_callback = false) {
