@@ -1,6 +1,6 @@
 ## Lame Thor Clone
 
-Lame Thor Clone is a Lame Clone of Thor, a popular toolkit for CLI applications written in Ruby.
+Lame Thor Clone is a Lame Clone of [Thor](http://whatisthor.com/), a popular toolkit for CLI applications written in Ruby.
 
 Lame Thor Clone exposes an executable with a number of subcommands, like git or bundler.
 
