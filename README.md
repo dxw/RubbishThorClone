@@ -78,7 +78,7 @@ Call this to define your subcommands. It takes three arguments: $definition, $de
 Your subcommand's definition. Consists of the subcommand name followed by a number of mandatory arguments:
 
 ```
-subcommand ARG1 ARG2 [...] arguments
+subcommand ARG1 ARG2 [...] ARGn
 ```
 
 A method with the same name as your subcommand must exist in your class. It must accept an equal number of parameters as the subcommand has arguments. They will be passed into your method in the order they appear on the command line.
@@ -97,6 +97,6 @@ Emits a list of the subcommands you have defined, along with their short descrip
 
 ## LameThorClone::start
 
-Takes a command line, figures out what to do, and calls your callbacks as necessary.
+Takes one argument ($argv), figures out what to do with it , and calls your callbacks as necessary.
 
 
