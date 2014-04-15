@@ -4,7 +4,15 @@ Lame Thor Clone is a Lame Clone of Thor, a popular toolkit for CLI applications 
 
 Lame Thor Clone exposes an executable with a number of subcommands, like git or bundler.
 
-To use it, first create a class that inherits from LameThorClone:
+To install:
+
+```bash
+$ cd somewhere_sensible
+$ git clone git@github.com:dxw/LameThorClone.git
+$ git submodule update --init
+```
+
+To use, first create a class that inherits from LameThorClone:
 
 ```php
 <?php
