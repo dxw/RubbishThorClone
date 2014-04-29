@@ -3,4 +3,4 @@
 	url = https://github.com/mjijackson/optionparser.git
 [submodule "lib/Console_Table"]
 	path = lib/Console_Table
-	url = git@github.com:pear/Console_Table.git
+	url = https://github.com/pear/Console_Table.git
