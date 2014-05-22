@@ -63,7 +63,7 @@ abstract class RubbishThorClone {
     }
 
     # Get the arguments and check there are enough
-    if(count($arguments) < count($this->command_def->arguments)) {
+    if(count($arguments) < count($this->command_def->arguments) - ($this->command_def->has_optional ? 1 : 0)) {
       $this->die_with_usage_error("wrong number of arguments; expected: {$this->command_def->definition}");
     }
 
@@ -138,8 +138,33 @@ abstract class RubbishThorClone {
     array_shift($command_bits);
     $arguments = $command_bits;
 
+
+    //
+    // Optional arguments.
+    // If there is an optional argument, there must only be one, and it must be the last one
+    //
+
+    $has_optional = false;
+
+    $optional_args = array_map(function($arg) { return $arg[0] == '['; }, $arguments);
+
+    // Do we have a valid argument?
+    if (($optional = array_search(true, $optional_args)) !== false) {
+      // If so, it must be the last one, and it must be at the end
+      if(! (
+        $optional == count($optional_args) - 1 &&
+        count(array_filter($optional_args)) == 1
+        )) {
+          $this->die_with_usage_error("If a command has optional arguments, it may only have one, and it must be the last one");
+      }
+      else {
+        $has_optional = true;
+      }
+    }
+
     $this->command_defs[$name] = (object)array(
       'arguments'        => $arguments,
+      'has_optional'     => $has_optional,
       'description'      => $description,
       'definition'       => $definition,
       'options_callback' => $options_callback,
