@@ -63,7 +63,10 @@ abstract class RubbishThorClone {
     }
 
     # Get the arguments and check there are enough
-    if(count($arguments) < count($this->command_def->arguments) - ($this->command_def->has_optional ? 1 : 0)) {
+    if($this->command_def->is_passthrough) {
+      $arguments = array(implode(' ', $arguments));
+    }
+    else if(count($arguments) < count($this->command_def->arguments) - ($this->command_def->has_optional ? 1 : 0)) {
       $this->die_with_usage_error("wrong number of arguments; expected: {$this->command_def->definition}");
     }
 
@@ -140,6 +143,28 @@ abstract class RubbishThorClone {
 
 
     //
+    // Pass-through arguments
+    // If there is a pass-through argument, there must only be one argument
+    //
+
+    $is_passthrough = false;
+    $passthrough_args = array_map(function($arg) { return $arg[0] == '*'; }, $arguments);
+
+    if (($passthrough = array_search(true, $passthrough_args)) !== false) {
+      if(!(
+        $passthrough !== false &&
+        count($arguments) == 1
+        )) {
+
+        $this->die_with_usage_error("If a command has a passthrough argument, there may only be one");
+      }
+      else {
+        $is_passthrough = true;
+      }
+    }
+
+
+    //
     // Optional arguments.
     // If there is an optional argument, there must only be one, and it must be the last one
     //
@@ -150,10 +175,11 @@ abstract class RubbishThorClone {
 
     // Do we have a valid argument?
     if (($optional = array_search(true, $optional_args)) !== false) {
-      // If so, it must be the last one, and it must be at the end
+      // If so, it must be the last one, and it must be at the end, and it must not be passthrough
       if(! (
         $optional == count($optional_args) - 1 &&
-        count(array_filter($optional_args)) == 1
+        count(array_filter($optional_args)) == 1 &&
+        !$is_passthrough
         )) {
           $this->die_with_usage_error("If a command has optional arguments, it may only have one, and it must be the last one");
       }
@@ -162,9 +188,11 @@ abstract class RubbishThorClone {
       }
     }
 
+
     $this->command_defs[$name] = (object)array(
       'arguments'        => $arguments,
       'has_optional'     => $has_optional,
+      'is_passthrough'   => $is_passthrough,
       'description'      => $description,
       'definition'       => $definition,
       'options_callback' => $options_callback,

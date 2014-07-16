@@ -91,6 +91,23 @@ subcommand ARG1 ARG2 [...] ARGn
 
 A method with the same name as your subcommand must exist in your class. It must accept an equal number of parameters as the subcommand has arguments. They will be passed into your method in the order they appear on the command line.
 
+You can specify an optional argument by wrapping it in [brackets]:
+
+```
+subcommand REQ_1 REQ_2 [OPTIONAL]
+```
+
+if a command has an optional argument, there must only be one, and it must be the last one.
+
+You can also bypass RubbishThorClone's argument parsing by prepending the argument with an asterisk. This helpful where arguments can contain spaces, or where you just want to parse things for yourself:
+
+```
+subcommand *ARGUMENT
+```
+
+A command can only have one argument if it's a pass-through argument. If you use this notation, RubbishThorClone will pass the whole contents of the command line (after the command name) as one argument.
+
+
 ### $description
 
 A human-friendly short description of the subcommand, used to generate usage help.
