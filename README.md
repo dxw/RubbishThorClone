@@ -8,8 +8,7 @@ To install:
 
 ```bash
 $ cd somewhere_sensible
-$ git clone https://github.com/dxw/RubbishThorClone.git
-$ git submodule update --init
+$ composer require dxw/RubbishThorClone dev-master
 ```
 
 To use, first create a class that inherits from RubbishThorClone:
@@ -17,7 +16,7 @@ To use, first create a class that inherits from RubbishThorClone:
 ```php
 <?php
 
-require "rubbish_thor_clone.class.php";
+require __DIR__."/vendor/autoload.php";
 
 class HelloWorld extends RubbishThorClone {
 
