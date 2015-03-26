@@ -1,5 +1,5 @@
 {
-    "name": "dxw/RubbishThorClone",
+    "name": "dxw/rubbishthorclone",
     "type": "library",
     "autoload": {
         "files": ["rubbish_thor_clone.class.php"]
