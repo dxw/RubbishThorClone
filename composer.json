@@ -1,0 +1,11 @@
+{
+    "name": "dxw/RubbishThorClone",
+    "type": "library",
+    "autoload": {
+        "files": ["rubbish_thor_clone.class.php"]
+    },
+    "require": {
+        "pear/console_table": "1.2.1",
+        "mjackson/optionparser": "dev-master"
+    }
+}

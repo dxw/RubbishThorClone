@@ -1,9 +1,5 @@
 <?php
 
-require dirname(__FILE__) . "/lib/optionparser/lib/OptionParser.php";
-require dirname(__FILE__) . "/lib/Console_Table/Table.php";
-
-
 abstract class RubbishThorClone {
   private $executable;
   private $command;

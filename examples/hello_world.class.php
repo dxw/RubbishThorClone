@@ -1,6 +1,6 @@
 <?php
 
-require "rubbish_thor_clone.class.php";
+require __DIR__."/../vendor/autoload.php";
 
 class HelloWorld extends RubbishThorClone {
 
