@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eb228f589ef4dd69477345deb9d4193d",
+    "hash": "34ce6b14054613ac9d3bd8d0b34bd4be",
     "packages": [
         {
             "name": "mjackson/optionparser",
@@ -92,7 +92,6 @@
         "mjackson/optionparser": 20
     },
     "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
