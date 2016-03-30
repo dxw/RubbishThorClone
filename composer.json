@@ -5,7 +5,7 @@
         "files": ["rubbish_thor_clone.class.php"]
     },
     "require": {
-        "pear/console_table": "1.2.1",
+        "pear/console_table": "*",
         "mjackson/optionparser": "dev-master"
     }
 }
