@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "40b897a156ce581deb96f90f09afc34f",
+    "content-hash": "09941522adfbb5e6d5ea8936de2487c2",
     "packages": [
         {
             "name": "mjackson/optionparser",
