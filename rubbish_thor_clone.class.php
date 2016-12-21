@@ -70,6 +70,11 @@ abstract class RubbishThorClone {
   }
 
   protected function help($command) {
+    # ensure the command exists
+    if(!isset($this->command_defs[$command])) {
+      $this->die_with_usage_error("cannot provide help for unknown command");
+    }
+
     $help_command = $this->command_defs[$command];
 
     echo basename($this->executable) . " {$this->command} ";
