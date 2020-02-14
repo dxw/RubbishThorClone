@@ -1,24 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "40b897a156ce581deb96f90f09afc34f",
-    "content-hash": "09941522adfbb5e6d5ea8936de2487c2",
+    "content-hash": "bbbffcb4a65fba489f2afc285023c42e",
     "packages": [
         {
-            "name": "mjackson/optionparser",
-            "version": "dev-master",
+            "name": "dxw/optionparser",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mjackson/optionparser.git",
-                "reference": "d6777ad1adb7d09eff1fad79a0f1abbd0761599f"
+                "url": "https://github.com/dxw/optionparser.git",
+                "reference": "09dcb3bf0271c1b10b5540f50cdf5c18c8133886"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mjackson/optionparser/zipball/d6777ad1adb7d09eff1fad79a0f1abbd0761599f",
-                "reference": "d6777ad1adb7d09eff1fad79a0f1abbd0761599f",
+                "url": "https://api.github.com/repos/dxw/optionparser/zipball/09dcb3bf0271c1b10b5540f50cdf5c18c8133886",
+                "reference": "09dcb3bf0271c1b10b5540f50cdf5c18c8133886",
                 "shasum": ""
             },
             "type": "library",
@@ -28,7 +27,7 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2015-03-17 16:57:12"
+            "time": "2020-02-14T13:48:18+00:00"
         },
         {
             "name": "pear/console_table",
@@ -83,15 +82,13 @@
             "keywords": [
                 "console"
             ],
-            "time": "2016-01-21 16:14:31"
+            "time": "2016-01-21T16:14:31+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mjackson/optionparser": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
