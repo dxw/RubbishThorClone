@@ -6,6 +6,6 @@
     },
     "require": {
         "pear/console_table": "*",
-        "mjackson/optionparser": "dev-master"
+        "dxw/optionparser": "^1.0"
     }
 }
