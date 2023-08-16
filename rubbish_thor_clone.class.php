@@ -5,6 +5,7 @@ abstract class RubbishThorClone {
   private $command;
 
   private $command_defs;
+  private $command_def;
   private $option_parser;
 
   protected $argv;
@@ -93,7 +94,7 @@ abstract class RubbishThorClone {
 
   private function parse_options($options_callack, &$arguments = null) {
     call_user_func($options_callack, $this->option_parser);
-
+    $args = null;
     try {
       $args = $this->option_parser->parse($arguments);
     }
