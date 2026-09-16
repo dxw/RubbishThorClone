@@ -4,6 +4,11 @@
     "autoload": {
         "files": ["rubbish_thor_clone.class.php"]
     },
+    "config": {
+      "platform": {
+        "php": "8.2"
+      }
+    },
     "require": {
         "pear/console_table": "*",
         "dxw/optionparser": "^1.0"
