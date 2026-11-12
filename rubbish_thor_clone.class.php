@@ -67,6 +67,10 @@ abstract class RubbishThorClone {
       $this->die_with_usage_error("wrong number of arguments; expected: {$this->command_def->definition}");
     }
 
+    /**
+     * @psalm-suppress UnusedPsalmSuppress
+     * @psalm-suppress TaintedInput
+     */
     call_user_func_array(array($this, $this->command), $arguments);
   }
 
@@ -78,6 +82,10 @@ abstract class RubbishThorClone {
 
     $help_command = $this->command_defs[$command];
 
+    /**
+     * @psalm-suppress UnusedPsalmSuppress
+     * @psalm-suppress TaintedInput
+     */
     echo basename($this->executable) . " {$this->command} ";
 
     foreach($help_command->arguments as $argument) {
@@ -108,6 +116,10 @@ abstract class RubbishThorClone {
   }
 
   private function die_with_usage_error($message, $usage = true) {
+    /**
+     * @psalm-suppress UnusedPsalmSuppress
+     * @psalm-suppress TaintedInput
+     */
     echo "Error: {$message}\n";
     if($usage) {
       $this->usage();

@@ -4,6 +4,7 @@ require __DIR__."/../vendor/autoload.php";
 
 class HelloWorld extends RubbishThorClone {
 
+  #[\Override]
   public function commands() {
     $this->command('hello NAME', 'say hello to NAME', function($option_parser) {
       $option_parser->addHead("Says hello to a person.\n");
