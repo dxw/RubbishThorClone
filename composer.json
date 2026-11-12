@@ -4,16 +4,12 @@
     "autoload": {
         "files": ["rubbish_thor_clone.class.php"]
     },
-    "config": {
-      "platform": {
-        "php": "8.2"
-      }
-    },
     "require": {
+        "php": "^8.3",
         "pear/console_table": "*",
         "dxw/optionparser": "^1.0"
     },
     "require-dev": {
-        "vimeo/psalm": "^5.14"
+        "vimeo/psalm": "^7.3.1"
     }
 }
