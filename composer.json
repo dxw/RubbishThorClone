@@ -5,6 +5,7 @@
         "files": ["rubbish_thor_clone.class.php"]
     },
     "require": {
+        "php": "^8.3",
         "pear/console_table": "*",
         "dxw/optionparser": "^1.0"
     },
