@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- Support for PHP versions below 8.3
+- composer.json platform config; this has no effect in a composer package context
 - composer.lock file; this has no effect in a composer package context
 
 ## [v1.0.2] - 2023-08-16
